@@ -12,6 +12,9 @@ venv/
 # Docker
 .docker/
 
+# Claude Code
+.claude/
+
 # Editor
 .vscode/
 .idea/
