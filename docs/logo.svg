@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" width="320" height="300">
+
+  <!-- Background -->
+  <rect width="320" height="300" fill="#0d1117" rx="12"/>
+
+  <!-- MCP network lines -->
+  <g stroke="#E07B39" stroke-width="1.5" opacity="0.55" fill="none">
+    <line x1="28"  y1="38"  x2="72"  y2="68"/>
+    <line x1="72"  y1="68"  x2="55"  y2="118"/>
+    <line x1="292" y1="38"  x2="248" y2="68"/>
+    <line x1="248" y1="68"  x2="265" y2="118"/>
+    <line x1="28"  y1="262" x2="72"  y2="232"/>
+    <line x1="72"  y1="232" x2="55"  y2="182"/>
+    <line x1="292" y1="262" x2="248" y2="232"/>
+    <line x1="248" y1="232" x2="265" y2="182"/>
+    <line x1="55"  y1="118" x2="55"  y2="182"/>
+    <line x1="265" y1="118" x2="265" y2="182"/>
+  </g>
+
+  <!-- MCP network nodes -->
+  <g fill="#E07B39">
+    <circle cx="28"  cy="38"  r="5"/>
+    <circle cx="72"  cy="68"  r="5"/>
+    <circle cx="55"  cy="118" r="5"/>
+    <circle cx="55"  cy="182" r="5"/>
+    <circle cx="72"  cy="232" r="5"/>
+    <circle cx="28"  cy="262" r="5"/>
+    <circle cx="292" cy="38"  r="5"/>
+    <circle cx="248" cy="68"  r="5"/>
+    <circle cx="265" cy="118" r="5"/>
+    <circle cx="265" cy="182" r="5"/>
+    <circle cx="248" cy="232" r="5"/>
+    <circle cx="292" cy="262" r="5"/>
+  </g>
+
+  <!-- Left horn -->
+  <path d="M 126 92 Q 104 52 118 20 Q 130 44 134 85 Z"
+        fill="#c8c8c8" stroke="#a0a0a0" stroke-width="1"/>
+  <!-- Right horn -->
+  <path d="M 194 92 Q 216 52 202 20 Q 190 44 186 85 Z"
+        fill="#c8c8c8" stroke="#a0a0a0" stroke-width="1"/>
+
+  <!-- Left ear -->
+  <ellipse cx="96" cy="122" rx="18" ry="11"
+           fill="#dcdcdc" stroke="#b8b8b8" stroke-width="1"
+           transform="rotate(-25 96 122)"/>
+  <!-- Right ear -->
+  <ellipse cx="224" cy="122" rx="18" ry="11"
+           fill="#dcdcdc" stroke="#b8b8b8" stroke-width="1"
+           transform="rotate(25 224 122)"/>
+
+  <!-- Head -->
+  <ellipse cx="160" cy="158" rx="65" ry="75"
+           fill="#ebebeb" stroke="#c8c8c8" stroke-width="1.5"/>
+
+  <!-- Eye whites -->
+  <ellipse cx="136" cy="145" rx="12" ry="9" fill="white"/>
+  <ellipse cx="184" cy="145" rx="12" ry="9" fill="white"/>
+
+  <!-- Goat pupils — rectangular horizontal (distinctive goat feature) -->
+  <rect x="130" y="143" width="12" height="5" rx="2.5" fill="#1a0800"/>
+  <rect x="178" y="143" width="12" height="5" rx="2.5" fill="#1a0800"/>
+
+  <!-- Eye shine -->
+  <circle cx="139" cy="142" r="2" fill="white" opacity="0.7"/>
+  <circle cx="187" cy="142" r="2" fill="white" opacity="0.7"/>
+
+  <!-- Snout -->
+  <ellipse cx="160" cy="190" rx="30" ry="22"
+           fill="#d8b8b8" stroke="#c0a0a0" stroke-width="1"/>
+
+  <!-- Nostrils -->
+  <ellipse cx="150" cy="194" rx="6" ry="4" fill="#a07878"/>
+  <ellipse cx="170" cy="194" rx="6" ry="4" fill="#a07878"/>
+
+  <!-- Beard -->
+  <path d="M 145 222 Q 160 252 175 222 Q 166 242 160 258 Q 154 242 145 222 Z"
+        fill="#d2d2d2" stroke="#b0b0b0" stroke-width="1"/>
+
+  <!-- MCP GOAT label -->
+  <text x="160" y="284"
+        text-anchor="middle"
+        font-family="'Courier New', monospace"
+        font-size="15"
+        font-weight="bold"
+        letter-spacing="3"
+        fill="#E07B39">MCP GOAT</text>
+
+</svg>

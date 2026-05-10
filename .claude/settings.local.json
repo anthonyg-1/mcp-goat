@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(python3 *)",
+      "Bash(docker compose *)",
+      "Bash(curl -sL https://raw.githubusercontent.com/getjavelin/ramparts/main/rules/pre/command_injection.yar -o /home/tony/git/mcp-goat/rules/pre/command_injection.yar)",
+      "Bash(curl -sL https://raw.githubusercontent.com/getjavelin/ramparts/main/rules/pre/path_traversal.yar -o /home/tony/git/mcp-goat/rules/pre/path_traversal.yar)",
+      "Bash(curl -sL https://raw.githubusercontent.com/getjavelin/ramparts/main/rules/pre/sql_injection.yar -o /home/tony/git/mcp-goat/rules/pre/sql_injection.yar)",
+      "Bash(curl -sL https://raw.githubusercontent.com/getjavelin/ramparts/main/rules/pre/secrets_leakage.yar -o /home/tony/git/mcp-goat/rules/pre/secrets_leakage.yar)",
+      "Bash(curl -sL https://raw.githubusercontent.com/getjavelin/ramparts/main/rules/pre/cross_origin_escalation.yar -o /home/tony/git/mcp-goat/rules/pre/cross_origin_escalation.yar)",
+      "Bash(curl -s \"https://api.github.com/repos/getjavelin/ramparts/contents/rules/pre\")",
+      "Bash(curl -s \"https://api.github.com/repos/highflame-ai/ramparts/contents/rules/pre\")",
+      "Bash(curl -s \"https://api.github.com/repos/getjavelin/ramparts\")",
+      "Bash(curl -s \"https://api.github.com/repos/getjavelin/ramparts/contents\")",
+      "Bash(sudo docker *)",
+      "Bash(docker kill *)",
+      "Bash(docker rm *)",
+      "Bash(docker info *)",
+      "Bash(ps *)",
+      "WebFetch(domain:owasp.org)"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+# Ramparts scan output
+scan-results*.txt
+scan_*.md
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Docker
+.docker/
+
+# Editor
+.vscode/
+.idea/
+*.swp

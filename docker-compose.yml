@@ -1,0 +1,10 @@
+services:
+  mcp-goat:
+    build: .
+    # Bind only to localhost — never expose this to a public interface.
+    ports:
+      - "127.0.0.1:8000:8000"
+    init: true
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped

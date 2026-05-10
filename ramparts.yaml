@@ -1,0 +1,33 @@
+# ramparts configuration for mcp-goat lab
+#
+# YARA rules are loaded from ./rules/pre/*.yar relative to CWD.
+# Run ramparts from the project root: cd mcp-goat && ramparts scan ...
+#
+# LLM analysis (ToolPoisoning, PromptInjection, AuthBypass):
+#   Requires an OpenAI-compatible API key.
+#   Set: export LLM_API_KEY=<your-openai-key>
+#   ramparts parses OpenAI response format; Anthropic API is not compatible.
+
+llm:
+  provider: openai
+  model: gpt-4o
+  base_url: https://api.openai.com/v1/chat/completions
+  api_key: ${LLM_API_KEY:-}
+  timeout: 30
+  max_tokens: 4000
+  temperature: 0.1
+
+scanner:
+  enable_yara: true
+  http_timeout: 30
+  scan_timeout: 60
+  detailed: true
+  parallel: true
+
+security:
+  enabled: true
+  min_severity: low
+
+logging:
+  level: info
+  colored: true
