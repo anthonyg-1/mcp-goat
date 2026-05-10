@@ -110,7 +110,7 @@ export LLM_API_KEY=sk-...    # OpenAI key
 ## Quickstart
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/mcp-goat
+git clone https://github.com/anthonyg-1/mcp-goat.git
 cd mcp-goat
 docker compose up -d
 ```
