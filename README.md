@@ -13,7 +13,7 @@
 
 ## Overview
 
-MCP Goat is an intentionally vulnerable [Model Context Protocol](https://modelcontextprotocol.io/) server built for security training. It provides a hands-on lab where practitioners can learn to identify, scan for, and remediate MCP-specific security vulnerabilities using [ramparts](https://github.com/getjavelin/ramparts) — a Rust-based MCP security scanner that combines YARA-X pattern matching with LLM-powered analysis.
+MCP Goat is an intentionally vulnerable [Model Context Protocol](https://modelcontextprotocol.io/) server built for security training. It provides a hands-on lab where practitioners can learn to identify, scan for, and remediate MCP-specific security vulnerabilities using [ramparts](https://github.com/getjavelin/ramparts), a Rust-based MCP security scanner that combines YARA-X pattern matching with LLM-powered analysis.
 
 **Architecture:** The server exposes both **MCP Resources** (whose names contain vulnerable patterns detected by YARA) and **MCP Tools** (whose docstrings contain adversarial instructions detected by LLM analysis). This mirrors real-world MCP server vulnerabilities where security issues live in metadata, not just runtime behavior.
 
@@ -683,7 +683,7 @@ ramparts scan http://localhost:8000/sse --report
 
 ---
 
-**Step 1 — Fix VULN-1: Path Traversal** *(MCP07)*
+**Step 1: Fix VULN-1 - Path Traversal** *(MCP07)*
 
 Edit `server/main.py` → resource `file://system/passwd`:
 - Change `name="../../etc/passwd"` to `name="system-data-files"`.
@@ -698,7 +698,7 @@ ramparts scan http://localhost:8000/sse --report
 
 ---
 
-**Step 2 — Fix VULN-2: Secrets Leakage** *(MCP01)*
+**Step 2: Fix VULN-2 - Secrets Leakage** *(MCP01)*
 
 Edit `server/main.py` → resource `config://aws-credentials`:
 - Change `name="AKIAIOSFODNN7EXAMPLE"` to `name="application-config"`.
@@ -712,7 +712,7 @@ ramparts scan http://localhost:8000/sse --report
 
 ---
 
-**Step 3 — Fix VULN-3: Environment Variable Leakage** *(MCP01)*
+**Step 3: Fix VULN-3 - Environment Variable Leakage** *(MCP01)*
 
 Edit `server/main.py` → resource `env://runtime-secrets`:
 - Change `name="AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG"` to `name="runtime-configuration"`.
@@ -727,7 +727,7 @@ ramparts scan http://localhost:8000/sse --report
 
 ---
 
-**Step 4 — Fix VULN-4: Command Injection** *(MCP05)*
+**Step 4: Fix VULN-4 - Command Injection** *(MCP05)*
 
 Edit `server/main.py` → resource `exec://system-command`:
 - Change `name="os.system('backup&&curl ...')"` to `name="backup-job-status"`.
@@ -741,7 +741,7 @@ ramparts scan http://localhost:8000/sse --report
 
 ---
 
-**Step 5 — Fix VULN-5: SQL Injection** *(MCP05)*
+**Step 5: Fix VULN-5 - SQL Injection** *(MCP05)*
 
 Edit `server/main.py` → resource `db://user-query`:
 - Change `name="SELECT * FROM users WHERE id='1' OR '1'='1'--"` to `name="public-user-listing"`.
@@ -755,7 +755,7 @@ ramparts scan http://localhost:8000/sse --report
 
 ---
 
-**Step 6 — Fix VULN-6: Cross-Domain Contamination + Mixed Schemes** *(MCP01)*
+**Step 6: Fix VULN-6 - Cross-Domain Contamination + Mixed Schemes** *(MCP01)*
 
 Edit `server/main.py` → resource `sync://multi-backend`:
 - Change `name="http://internal-api.corp.local/data https://external-analytics.attacker.com/collect"` to `name="internal-api-data"`.
@@ -769,7 +769,7 @@ ramparts scan http://localhost:8000/sse --report
 
 ---
 
-**Step 7 — Fix VULN-10: Context Over-Sharing** *(MCP10)*
+**Step 7: Fix VULN-10 - Context Over-Sharing** *(MCP10)*
 
 Edit `server/main.py` → resource `context://shared-memory`:
 - Change `name="shared_context_store[no_isolation][all_users_visible]"` to `name="user-session-context"`.
@@ -785,7 +785,7 @@ ramparts scan http://localhost:8000/sse --report
 
 ---
 
-**Step 8 — Fix VULN-7: Tool Poisoning** *(MCP03)*
+**Step 8: Fix VULN-7 - Tool Poisoning** *(MCP03)*
 
 Edit `server/main.py` → tool `process_user_data`:
 - Delete the hidden "AI Integration Note" paragraph from the docstring.
@@ -798,7 +798,7 @@ LLM_API_KEY=sk-... ramparts scan http://localhost:8000/sse --report
 
 ---
 
-**Step 9 — Fix VULN-8: Intent Flow Subversion** *(MCP06)*
+**Step 9: Fix VULN-8 - Intent Flow Subversion** *(MCP06)*
 
 Edit `server/main.py` → tool `analyze_document_content`:
 - Delete the `[SYSTEM INJECTION] ... [END INJECTION]` block from the docstring.
@@ -811,7 +811,7 @@ LLM_API_KEY=sk-... ramparts scan http://localhost:8000/sse --report
 
 ---
 
-**Step 10 — Fix VULN-9: Auth Bypass + Privilege Escalation** *(MCP07 + MCP02)*
+**Step 10: Fix VULN-9 - Auth Bypass + Privilege Escalation** *(MCP07 + MCP02)*
 
 Edit `server/main.py` → tool `manage_system_access`:
 - Rewrite docstring: remove bypass/no-auth language.
