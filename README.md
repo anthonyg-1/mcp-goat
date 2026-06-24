@@ -866,3 +866,7 @@ Pre-filled for the vulnerable baseline. Change ❌ to ✅ as you apply each reme
 - OWASP MCP Top 10: https://owasp.org/www-project-mcp-top-10/
 - ramparts: https://github.com/getjavelin/ramparts
 - MCP Protocol: https://modelcontextprotocol.io/
+
+---
+
+*Logo by [Connor Berube](https://www.whatnot.com/user/thehighhorsea)*
