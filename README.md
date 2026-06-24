@@ -1,7 +1,7 @@
 # MCP Goat
 
 <p align="center">
-  <img src="docs/logo.svg" alt="MCP Goat Logo" width="320"/>
+  <img src="docs/logo.svg" alt="MCP Goat Logo" width="230"/>
 </p>
 
 > **FOR EDUCATIONAL USE ONLY.**
